@@ -1,0 +1,103 @@
+/*
+    Asterisks select all elements on the page. This rule sets the color of all elements by default to black.
+*/
+/* * {
+    color: black;
+} */
+/*
+    Using the element name (div in this case) as a selector will select all elements of that type.
+    This rule sets the color of all div elements to red.
+*/
+div {
+    color: red;
+}
+/*
+    Using the '.' selector along with a class name will select all elements with that class.
+    This rule sets the color of all elements with the class "title" to purple.
+    Classes are used to apply the same style to multiple elements.
+*/
+.title-class {
+    color: purple;
+}
+/*
+    Using the '#' selector along with an id name will select the element with that id.
+    This rule sets the color of the element with the id "title" to blue.
+    Ids are used to apply unique styles to individual elements.
+*/
+#title-id {
+    color: blue;
+}
+/*
+    We can chain selectors together to create more specific rules.
+    Here, we are selecting the interior-para-a class and the interior-para-b class.
+    They share the same color, but interior-para-a is bold and interior-para-b is italic.
+    (Inheritance can be used to avoid repetition of shared styles.)
+*/
+.interior-para-a, .interior-para-b {
+    color: green;
+}
+.interior-para-a {
+    font-weight: bold;
+}
+.interior-para-b {
+    font-style: italic;
+}
+/*
+    We use chained selectors to also select elements with multiple classes.
+    This rule sets the stule of elements with both the "subtitle" and "header" classes.
+    Note: It MUST have both classes to be selected.
+*/
+.subtitle.header {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.subtitle.body {
+    color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+    We can use the space selector to select elements that are descendants of other elements.
+    This rule sets the color of all children of the element with the class "ancestor" to pink
+    if they have the class "child".
+    This can be done also with the '>' selector to select only direct children, and ignores grandchildren.
+*/
+.ancestor .child {
+    color: pink;
+}
+
+/*
+    Specificity is a way to determine which styles are applied when multiple rules conflict.
+    The more specific a rule is, the higher its priority.
+    1. Inline styles have the highest priority.
+    2. Id selectors have the next highest priority.
+    3. Class selectors have the next highest priority.
+    4. Element selectors have the lowest priority.
+    5. Targeting an element directly will overrule inherited styles.
+        Example:
+        <div id="parent">
+            <div class="child"></div>
+        </div>
+
+        #parent {
+            color: red;
+        }      
+        .child {
+            color: blue;
+        }
+
+        The child element will be blue, not red, because the class selector is more specific than the id selector.
+    
+    6. If two rules have the same priority, the one that has more selectors will take precedence.
+        Example:
+        .title {
+            color: red;
+        }
+        div.title {
+            color: blue;
+        }
+
+        The div with the class "title" will be blue, not red, because it has a higher specificity.
+    
+    7. The last rule defined will take precedence in the case of a tie.
+*/
