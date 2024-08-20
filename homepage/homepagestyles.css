@@ -1,0 +1,47 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; /* For debugging purposes */
+}
+body {
+    background-color: #0A1128;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 75px;
+    border: 2px solid #F0F7EE; /* Dark border for the outline */
+    border-radius: 15px; /* Rounded corners */
+    margin: 20px auto;
+    margin-left: 40px;  /* Add space on the left */
+    margin-right: 40px; /* Add space on the right */
+}
+
+.logo a {
+    color: #F0F7EE;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bolder;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 80px;
+}
+
+.navigation-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 80px;
+}
+
+.nav-links a {
+    color: #F0F7EE;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin-left: 40px; /* Space between individual links */
+}
